@@ -37,8 +37,9 @@ namespace CrmTestEmailSender
                 var toIdsArray = toIds.Split(';');
 
                 var email = new Entity("email");
-                email["subject"] = "testing " + DateTime.Now;
-                email["description"] = "test message" + DateTime.Now;
+                var date = DateTime.Now.ToString();
+                email["subject"] = "Test subject " + date;
+                email["description"] = "Test message " + date;
 
                 var toList = new List<Entity>();
                 foreach (var toId in toIdsArray)
